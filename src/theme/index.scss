@@ -1,0 +1,51 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './breakpoints.scss';
+
+@mixin bp($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+@mixin max-bp($screen) {
+  @media (max-width: $screen - 1 +'px') {
+    @content;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5em;
+  font-family: $primary;
+  background-color: $color-secondary;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: $info;
+}
