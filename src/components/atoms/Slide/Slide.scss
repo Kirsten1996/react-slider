@@ -1,0 +1,65 @@
+@import '../../../theme/index.scss';
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+.slide {
+
+  &-image-wrapper {
+    background-color: $color-accent;
+    border-radius: 1%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: transform calc $base-duration / 4 $base-ease;
+  }
+
+
+  &-image {
+    height: 110%;
+    left: -5%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -5%;
+    transition: opacity $base-duration $base-ease,
+    transform $base-duration $base-ease;
+    user-select: none;
+    width: 110%;
+  }
+
+  &-headline {
+    font-size: 8vmin;
+    font-weight: 600;
+    position: relative;
+  }
+
+  &-content {
+    --d: 60;
+
+    opacity: 0;
+    padding: 4vmin;
+    position: relative;
+    transition: transform $base-duration $base-ease;
+    visibility: hidden;
+
+    .slide--current & {
+      animation: fade-in calc $base-duration / 2 $base-ease forwards;
+      visibility: visible;
+    }
+
+    .btn {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+      padding: .8em;
+      text-transform: uppercase;
+    }
+  }
+}

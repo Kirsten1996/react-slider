@@ -49,3 +49,8 @@ button {
 h1, h2, h3 {
   font-family: $info;
 }
+
+$base-duration: 600ms;
+$base-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
+
+$d: 20;
